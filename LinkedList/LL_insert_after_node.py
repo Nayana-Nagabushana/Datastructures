@@ -1,9 +1,9 @@
 # inserting an element at given index
 
 class Node:
-    def __init__(self, data=None, next=None):
+    def __init__(self, data):
         self.data = data
-        self.next = next
+        self.next = None
 
 
 # implementing the linked list class
@@ -16,15 +16,6 @@ class LinkedList:
         new_node = Node(data)
         new_node.next = self.head
         self.head = new_node
-
-    def insert_at_end(self,data):
-        if self.head is None:
-            self.head = Node(data, None)
-            return
-        itr = self.head
-        while itr.next:
-            itr = itr.next
-        itr.next = Node(data, None)
 
 # x - new node will inserted after the node x
     def insert_after_node(self,data,x):
@@ -66,4 +57,5 @@ if __name__ == '__main__':
     ll.insert_at_beginning(2)
     ll.print()
     ll.insert_after_node(100,10)
+    ll.insert_after_node(56, 103)
     ll.print()

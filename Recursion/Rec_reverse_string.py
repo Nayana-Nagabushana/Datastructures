@@ -2,7 +2,7 @@
 
 def rev_string(s):
     #base case
-    if len(s) == 1:
+    if len(s) <= 1:
         return s
 
     #recursive case

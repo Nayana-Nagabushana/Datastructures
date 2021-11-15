@@ -50,3 +50,5 @@ if __name__ == '__main__':
     ll.print()
     ll.delete_by_value(2)
     ll.print()
+    ll.delete_by_value(45)
+    ll.print()

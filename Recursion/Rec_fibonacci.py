@@ -1,5 +1,5 @@
 # fibonacci using iteration and recursion
-
+# iteration
 def rec_fib_itr(n):
     a,b =0,1
     for i in range(n):
@@ -8,6 +8,7 @@ def rec_fib_itr(n):
 
 print(rec_fib_itr(10))
 
+# recursive
 def rec_fib_recr(n):
     if n == 0 or n == 1:
         return n

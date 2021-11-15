@@ -1,4 +1,4 @@
-#implementing stack using Arrays
+#implementing stack using Arrays/lists
 
 class Stack(object):
     def __init__(self):

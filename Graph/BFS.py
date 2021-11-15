@@ -1,21 +1,28 @@
-# BFS uses queue
+graph = {
+    'A': ['D', 'S'],
+    'B': ['D', 'S'],
+    'C': ['D', 'S'],
+    'D': ['A','B','C'],
+    'S': ['A','B','C'],
 
-def bfs(graph , start):
-    visited = set()
-    queue = [start]
+}
+
+visited = []
+queue = []
+
+
+def bfs(visited, graph, node):
+    visited.append(node)
+    queue.append(node)
+
     while queue:
-        vertex = queue.pop(0)
-        if vertex not in visited:
-            visited.add(vertex)
-            print(visited)
-            queue.extend(graph[vertex] - visited)
-    return visited
+        s = queue.pop(0)
+        print(s, end=" ")
 
-graph = {'A': set(['B', 'C']),
-         'B': set(['A', 'D', 'E']),
-         'C': set(['A', 'F']),
-         'D': set(['B']),
-         'E': set(['B', 'F']),
-         'F': set(['C', 'E'])}
+        for neighbour in graph[s]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
 
-print(bfs(graph,'A'))
+
+bfs(visited, graph, 'A')

@@ -1,17 +1,15 @@
-#implementing stack using dequeue
-from collections import  deque
-class Stack:
-    def __init__(self):
-        self.items = deque()
+# implementing stack using deque
 
-    def push(self,item):
-        self.items.append(item)
+from collections import deque
 
-    def pop(self):
-        return self.items.pop()
+stack = deque()
+stack.append(1)
+stack.append(2)
+stack.append(5)
+stack.append(9)
 
-    def size(self):
-        return len(self.items)
+print(stack)
 
-    def isEmpty(self):
-        return len(self.items) == 0
+stack.pop()
+stack.pop()
+print(stack)

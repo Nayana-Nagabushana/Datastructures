@@ -12,11 +12,6 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert_at_beginning(self, data):
-        new_node = Node(data)
-        new_node.next = self.head
-        self.head = new_node
-
     def insert_in_empty_list(self,data):
         if self.head is None:
             new_node = Node(data)
@@ -31,7 +26,7 @@ class LinkedList:
             return
         itr = self.head
         llstr = ''
-        while itr:
+        while itr is not None:
             llstr += str(itr.data) + '-->'
             itr = itr.next
         print(llstr)

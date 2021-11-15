@@ -31,7 +31,7 @@ class LinkedList:
         itr = self.head
         count = 0
         while itr:
-            count += 1
+            count += 1      # count each node and increment it
             itr = itr.next
         return count
 

@@ -16,10 +16,13 @@ class LinkedList:
         if self.head is None:
             print("list is empty")
             return
-        itr = self.head
-        while itr.next.next:
-            itr = itr.next
-        itr.next = None
+        elif self.head.next is None:     # if list contains only one node
+            self.head = None
+        else:
+            itr = self.head
+            while itr.next.next:
+                itr = itr.next
+            itr.next = None
 
     def insert_at_beginning(self, data):
         new_node = Node(data)
@@ -46,4 +49,9 @@ if __name__ == '__main__':
     ll.print()
     ll.delete_at_end()
     ll.print()
+    ll.delete_at_end()
+    ll.print()
+    ll.delete_at_end()
+    ll.print()
+
 

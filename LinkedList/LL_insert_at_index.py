@@ -1,9 +1,9 @@
 # inserting an element at given index
 
 class Node:
-    def __init__(self, data=None, next=None):
+    def __init__(self, data):
         self.data = data
-        self.next = next
+        self.next = None
 
 
 # implementing the linked list class
@@ -17,15 +17,6 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def insert_at_end(self,data):
-        if self.head is None:
-            self.head = Node(data, None)
-            return
-        itr = self.head
-        while itr.next:
-            itr = itr.next
-        itr.next = Node(data, None)
-
     def insert_at_index(self,index,data):
         if index < 0 or index >= self.get_length():
             raise Exception("Invalid index")
@@ -37,10 +28,11 @@ class LinkedList:
         count = 0
         while itr:
             if count == index - 1:
-                node = Node(data,itr.next)
+                node = Node(data)
+                node.next = itr.next
                 itr.next = node
                 break
-            itr =itr .next
+            itr = itr .next
             count += 1
 
     def get_length(self):
@@ -64,8 +56,10 @@ class LinkedList:
 
 if __name__ == '__main__':
     ll = LinkedList()
-    ll.insert_at_end('Apple')
-    ll.insert_at_end('Banana')
+    ll.insert_at_beginning(12)
+    ll.insert_at_beginning(34)
+    ll.insert_at_beginning(20)
+    ll.insert_at_beginning(50)
     ll.print()
     ll.insert_at_index(0,'Figs')
     ll.print()

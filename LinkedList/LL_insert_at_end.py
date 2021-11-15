@@ -1,9 +1,9 @@
 # implementing the node -contains data(string,integer,etc) next - pointer to the next node
 
 class Node:
-    def __init__(self, data=None, next=None):
+    def __init__(self, data):
         self.data = data
-        self.next = next
+        self.next = None
 
 
 # implementing the linked list class
@@ -14,12 +14,12 @@ class LinkedList:
 
     def insert_at_end(self,data):
         if self.head is None:
-            self.head = Node(data, None)
+            self.head = Node(data)
             return
         itr = self.head
         while itr.next:
             itr = itr.next
-        itr.next = Node(data, None)
+        itr.next = Node(data)/
 
     def print(self):
         if self.head is None:
@@ -27,7 +27,7 @@ class LinkedList:
             return
         itr = self.head
         llstr = ''
-        while itr:
+        while itr :
             llstr += str(itr.data) + '-->'
             itr = itr.next
         print(llstr)
