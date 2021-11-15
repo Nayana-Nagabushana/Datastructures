@@ -1,19 +1,22 @@
-def paranthesis(s):
-    if len(s) % 2 != 0:
-        return False
-    open = set('({[')
-    matches = set([('(',')'),('[',']'),('{','}')])
+#balance paranthesis using stack
+
+def ismatch(ch1,ch2):
+    match_dict = { ")": "(","]" : "[","}": "{"}
+    return match_dict[ch1] == ch2
+
+def balancedParanthesis(input1):
     stack = []
-    for paren in s:
-        if paren in open:
-            stack.append(open)
-        else:
-            if len(stack) == 0:
+    for symbol in input1:
+        if symbol in ["(","[","{"]:
+            stack.append(symbol)
+        if symbol in [")","]","}"]:
+            if len(stack)== 0:
                 return False
-            last_open = stack.pop()
-            print(last_open)
-            if (last_open, paren) not in matches:
+            if not ismatch(symbol,stack.pop()):
                 return False
     return len(stack) == 0
 
-print(paranthesis('[]({{}})'))
+
+
+print(balancedParanthesis("({})"))
+print(balancedParanthesis("{[{()}}"))
